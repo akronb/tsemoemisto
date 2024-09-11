@@ -1,0 +1,130 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+
+const lang = Astro.currentLocale;
+
+const menu = {
+  ru: ["о проекте", "рассказать", "помочь"],
+  en: ["about", "tell your story", "help"],
+  uk: ["про проект", "розповісти", "допомогти"],
+  he: ["על הפרויקט", "לספר", "לעזור"],
+};
+
+const links = ["#about", "#yourstory", "#help"];
+
+const currentPath = Astro.url.pathname;
+
+function getRelativeUrl() {
+  return currentPath.replace(`/${lang}`, "");
+}
+---
+
+<header class="header">
+  <div class="container menu">
+    <a href={getRelativeLocaleUrl(lang, "")} class="logo">
+      <img src="/images/logo.svg" />
+    </a>
+    <nav class="nav">
+      <ul class="links">
+        {
+          links.map((l, idx) => (
+            <li class="links__item">
+              <a href={getRelativeLocaleUrl(lang, links[idx])}>
+                {menu[lang][idx]}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+
+      <div class="language">
+        <img src="/images/language.svg" height="20" width="20" />
+        <ul class="language__list">
+          <li class="language__item">
+            <a href={getRelativeLocaleUrl("en", getRelativeUrl())}>🇬🇧</a>
+          </li>
+          <li class="language__item">
+            <a href={getRelativeLocaleUrl("he", getRelativeUrl())}>🇮🇱</a>
+          </li>
+          <li class="language__item">
+            <a href={getRelativeLocaleUrl("uk", getRelativeUrl())}>🇺🇦</a>
+          </li>
+          <li class="language__item">
+            <a href={getRelativeLocaleUrl("ru", getRelativeUrl())}>🇷🇺</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+<style>
+  .header {
+    background-color: #1d1d1d;
+    padding: 16px 0;
+  }
+
+  .nav {
+    display: flex;
+    justify-items: center;
+  }
+
+  .menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .links {
+    display: flex;
+    list-style: none;
+    margin-inline-end: 20px;
+    padding: 0;
+  }
+
+  .links__item {
+    color: #ffffff;
+    font-size: 19px;
+    transition: 0.2s ease-in-out;
+    text-decoration: none;
+  }
+
+  .links__item:not(:last-child) {
+    margin-inline-end: 20px;
+  }
+
+  .links__item:hover {
+    color: #ffd700;
+  }
+
+  .links__item a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .language {
+    display: flex;
+    align-items: center;
+  }
+
+  .language__list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+  }
+
+  .language__item {
+    font-size: 24px;
+    margin-inline-start: 8px;
+  }
+
+  .language__item a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .logo {
+    width: 64px;
+    height: 64px;
+    padding-inline-start: 8px;
+  }
+</style>

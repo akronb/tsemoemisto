@@ -1,0 +1,43 @@
+---
+
+---
+
+<div class="title container">
+  <h1>
+    <slot />
+  </h1>
+</div>
+<style>
+  .title {
+    position: relative;
+  }
+
+  .title:before {
+    content: "";
+    display: block;
+    position: absolute;
+    background-image: url("/images/title-bgr.png");
+    top: 0;
+    width: 422px;
+    height: 154px;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  html[dir="ltr"] .title:before {
+    left: 0;
+  }
+
+  html[dir="rtl"] .title:before {
+    right: 0;
+    transform: rotateY(180deg);
+  }
+
+  .title h1 {
+    padding-top: 80px;
+    padding-inline-start: 460px;
+    color: #ffd700;
+    font-weight: 900;
+    font-size: 80px;
+  }
+</style>
