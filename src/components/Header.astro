@@ -59,8 +59,11 @@ function getRelativeUrl() {
 </header>
 <style>
   .header {
+    position: fixed;
+    width: 100%;
     background-color: #1d1d1d;
     padding: 16px 0;
+    z-index: 100;
   }
 
   .nav {
@@ -77,8 +80,14 @@ function getRelativeUrl() {
   .links {
     display: flex;
     list-style: none;
-    margin-inline-end: 20px;
+    margin-inline-end: 32px;
     padding: 0;
+  }
+
+  @media (max-width: 600px) {
+    .links {
+      display: none;
+    }
   }
 
   .links__item {

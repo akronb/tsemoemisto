@@ -65,5 +65,11 @@ p, h1, h2, h3, h4, h5, h6 {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  
+}
+
+@media (max-width: 1200px) {
+  .container {
+    padding-inline-start: 16px;
+    padding-inline-end: 16px;
+  }
 }
