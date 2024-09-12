@@ -21,4 +21,15 @@
   html[dir="rtl"] .quote {
     transform: translateX(-120px);
   }
+
+  @media (max-width: 900px) {
+    .quote {
+      transform: none;
+      padding-inline-start: 32px;
+    }
+
+    html[dir="rtl"] .quote {
+      transform: none;
+    }
+  }
 </style>
