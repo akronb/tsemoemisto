@@ -16,8 +16,7 @@ const links = ["#about", "#yourstory", "#help"];
 const currentPath = Astro.url.pathname;
 
 function getRelativeUrl() {
-  const relativeUrl = currentPath.replace(`/${lang}`, "");
-  return relativeUrl !== "" ? relativeUrl : undefined;
+  return currentPath.replace(`/${lang}`, "");
 }
 ---
 
