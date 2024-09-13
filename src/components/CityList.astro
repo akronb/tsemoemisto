@@ -1,0 +1,177 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+
+const cities = {
+  ru: ["Харьков", "Киев", "Одесса"],
+  uk: ["Харків", "Киïв", "Одеса"],
+  en: ["Kharkiv", "Kyiv", "Odesa"],
+  he: ["חרקוב", "קייב", "אודסה"],
+};
+
+const callNames = { ru: "читать", uk: "читати", en: "read", he: "לקרוא" };
+
+const links = ["kharkiv", "kyiv", "odesa"];
+
+const lang = Astro.currentLocale;
+---
+
+<div class="container">
+  <div class="cities">
+    <div class="cities__bg-top"></div>
+    <div class="cities__bg-side"></div>
+    <div class="cities__bg-bottom"></div>
+    {
+      cities[lang].map((c, idx) => (
+        <div class="city">
+          <a href={getRelativeLocaleUrl(lang, links[idx])} class="read-link">
+            {callNames[lang]}
+          </a>
+          <p>{c}</p>
+        </div>
+      ))
+    }
+  </div>
+</div>
+<style>
+  .cities {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-top: 200px;
+    padding-inline-end: 160px;
+    padding-bottom: 140px;
+    padding-inline-start: 80px;
+  }
+
+  @media (max-width: 900px) {
+    .cities {
+      padding: 140px 40px 100px;
+    }
+  }
+
+  .cities__bg-top {
+    position: absolute;
+    top: 0;
+    width: 700px;
+    height: 200px;
+    background-image: url(/images/title-bgr.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  html[dir="ltr"] .cities__bg-top {
+    left: 0;
+  }
+
+  html[dir="rtl"] .cities__bg-top {
+    right: 0;
+    transform: rotateY(180deg);
+  }
+
+  @media (max-width: 900px) {
+    .cities__bg-top {
+      width: 100%;
+      margin: 0 -16px;
+    }
+  }
+
+  .cities__bg-side {
+    position: absolute;
+    top: 0;
+    width: 144px;
+    height: 756px;
+    background-image: url(/images/cities-bg-side.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  html[dir="ltr"] .cities__bg-side {
+    right: 0;
+  }
+
+  html[dir="rtl"] .cities__bg-side {
+    left: 0;
+    transform: rotateY(180deg);
+  }
+
+  @media (max-width: 900px) {
+    .cities__bg-side {
+      display: none;
+    }
+  }
+
+  .cities__bg-bottom {
+    position: absolute;
+    bottom: 0;
+
+    width: 800px;
+    height: 200px;
+    background-image: url(/images/cities-bg-bottom.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  html[dir="ltr"] .cities__bg-bottom {
+    left: 0;
+  }
+
+  html[dir="rtl"] .cities__bg-bottom {
+    right: 0;
+    transform: rotateY(180deg);
+  }
+
+  @media (max-width: 900px) {
+    .cities__bg-bottom {
+      width: 100%;
+      height: 100px;
+      margin: 0 -16px;
+    }
+  }
+
+  .city {
+    min-width: 400px;
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: 20px;
+  }
+
+  .city:nth-child(2n + 1) {
+    align-self: flex-start;
+  }
+
+  .city p {
+    color: #222222;
+    font-size: 85px;
+    font-weight: 700;
+    transition: color 0.2s ease-in-out;
+  }
+
+  .read-link {
+    display: block;
+    color: #222222;
+    padding: 4px 0;
+    font-size: 24px;
+    border-width: 3px;
+    border-radius: 100px;
+    background-position: center center;
+    border-color: #222222;
+    border-style: solid;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .read-link:hover ~ p {
+    color: #ffd700;
+  }
+
+  @media (max-width: 900px) {
+    .city {
+      min-width: 240px;
+    }
+
+    .city p {
+      font-size: 48px;
+    }
+  }
+</style>

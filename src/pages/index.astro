@@ -1,5 +1,7 @@
 ---
 import Main from "../layouts/main.astro";
+
+import CityList from "../components/CityList.astro";
 ---
 
 <html lang="en">
@@ -12,9 +14,7 @@ import Main from "../layouts/main.astro";
   </head>
   <body>
     <Main>
-      <a href="/kyiv">Kyiv</a>
-      <a href="/kharkiv">Kharkiv</a>
-      <a href="/odesa">Odesa</a></Main
-    >
+      <CityList />
+    </Main>
   </body>
 </html>
