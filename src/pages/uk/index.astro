@@ -2,19 +2,77 @@
 import Main from "../../layouts/main.astro";
 
 import CityList from "../../components/CityList.astro";
+import InfoBlock from "../../components/InfoBlock.astro";
+import Parallax from "../../components/Parallax.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <Main>
-      <CityList />
-    </Main>
-  </body>
-</html>
+<Main>
+  <InfoBlock title="про проєкт" subtitle="хто розповість про місто?" id="about">
+    <p>
+      у роки Шоа [Голокосту] більшість єврейських містечок були стерті з лиця
+      землі. люди, які вижили у війні, не могли повернутися додому, а багатьом
+      не було куди повертатися. іноді пам'ять — єдине, здатне говорити; саме
+      вона стала автором ізкор біхер, «книг пам'яті».
+    </p>
+    <p>
+      «місто» — це мультимедійний проєкт, заснований на інтерв'ю з українцями,
+      які залишили свої будинки через повномасштабне вторгнення, та серію
+      виставок про рідне місто, дiм та сприйняття війни.
+    </p>
+    <p>
+      основний метод роботи проєкту — глибинні інтерв'ю українською, російською,
+      англійською та івритом: спогади про рідне місто, дитинство, запахи, звуки.
+      це умоглядні прогулянки рідними місцями і вглиб себе.
+    </p>
+    <p>
+      «місто» — це:<br />
+      • автобіографічні інтерв'ю українською, російською, англійською та івритом,
+      доступні в розділі «читати»<br />
+      • <a href="/exhibition">онлайн 3D виставка </a> українських художників про
+      рідне місто та дiм<br />
+      • виставка у містах Ізраїлю:<br /><br />
+      Яффо | 11 – 14/09 | <a href="https://www.instagram.com/nothin9000000"
+        >арт-простір nothing</a
+      > (Ха-Цорфим 29)<br />
+      <br />
+      Хайфа | <a href="https://www.instagram.com/tse_moe_misto"
+        >слідкуйте за оновленнями</a
+      ><br />
+      <br />
+      Єрусалим | 24 – 27/09 | <a href="https://www.instagram.com/koresh_gallery"
+        >галерея Кореш 14</a
+      > (Кореш 14)
+    </p>
+  </InfoBlock>
+  <CityList />
+  <InfoBlock title="розповісти" id="tell">
+    <p>
+      якщо ви народилися в Україні і хочете поділитися спогадами про ваше місто
+      <br />
+      напишіть нам на <a href="misto.spogadiv@gmail.com"
+        >misto.spogadiv@gmail.com</a
+      >
+    </p>
+    <p>
+      ми виберемо зручний для вас час,<br />
+      зателефонуємо до zoom<br />
+      або зустрінемося на каву
+    </p>
+  </InfoBlock>
+  <Parallax />
+  <InfoBlock title="допомогти" id="help">
+    <p>
+      ми хочемо, щоб проект жив різними мовами: українською, англійською та
+      івритом
+    </p>
+    <p>
+      якщо ви готові перекладати інтерв'ю - напишітьтна <a
+        href="misto.spogadiv@gmail.com">misto.spogadiv@gmail.com</a
+      > з позначкою «переклад»
+    </p>
+    <p>
+      якщо ви хочете допомогти нам познайомитися з людьми, з якими нам буде
+      добре; допомогти фінансово; зустрітися з нами на каві – пишіть теж!
+    </p>
+  </InfoBlock>
+</Main>

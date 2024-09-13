@@ -1,5 +1,6 @@
 ---
 import { getRelativeLocaleUrl } from "astro:i18n";
+import { undefined } from "astro:schema";
 
 const lang = Astro.currentLocale;
 
@@ -15,13 +16,14 @@ const links = ["#about", "#yourstory", "#help"];
 const currentPath = Astro.url.pathname;
 
 function getRelativeUrl() {
-  return currentPath.replace(`/${lang}`, "");
+  const relativeUrl = currentPath.replace(`/${lang}`, "");
+  return relativeUrl !== "" ? relativeUrl : undefined;
 }
 ---
 
 <header class="header">
   <div class="container menu">
-    <a href={getRelativeLocaleUrl(lang, "")} class="logo">
+    <a href={getRelativeLocaleUrl(lang)} class="logo">
       <img src="/images/logo.svg" />
     </a>
     <nav class="nav">
@@ -29,7 +31,7 @@ function getRelativeUrl() {
         {
           links.map((l, idx) => (
             <li class="links__item">
-              <a href={getRelativeLocaleUrl(lang, links[idx])}>
+              <a href={getRelativeLocaleUrl(lang, links[idx]).slice(0, -1)}>
                 {menu[lang][idx]}
               </a>
             </li>

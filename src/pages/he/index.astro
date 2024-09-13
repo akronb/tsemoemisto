@@ -2,19 +2,71 @@
 import Main from "../../layouts/main.astro";
 
 import CityList from "../../components/CityList.astro";
+import InfoBlock from "../../components/InfoBlock.astro";
+import Parallax from "../../components/Parallax.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <Main>
-      <CityList />
-    </Main>
-  </body>
-</html>
+<Main>
+  <InfoBlock title="על הפרויקט" subtitle="מי יספר על העיר?" id="about">
+    <p>
+      במהלך השואה נמחקו רוב העיירות היהודיות מעל פני האדמה. אנשים ששרדו את
+      המלחמה לא יכלו לחזור הביתה, ולרבים לא היה לאן לחזור. לפעמים הזיכרון הוא
+      הדבר היחיד שיכול לדבר; כך הוקמו יזכור ביהר "ספרי זיכרון".
+    </p>
+    <p>
+      מיסטו הוא פרויקט מולטימדיה המבוסס על ראיונות עם אוקראינים שעזבו את בתיהם
+      עקב הפלישה הרוסית בקנה מידה מלא, וסדרת תערוכות על עיר הולדתם, ביתם ותפיסות
+      המלחמה שלהם.
+    </p>
+    <p>
+      השיטה העיקרית של הפרויקט היא ראיונות עומק באוקראינית, רוסית, אנגלית
+      ועברית: זיכרונות מעיר הולדתו, ילדות, ריחות, צלילים. אלה הם טיולים דמיוניים
+      דרך מקומות ילידים ועמוק בתוך עצמו.
+    </p>
+    <p>
+      המיסטו הוא:<br />
+      • ראיונות אוטוביוגרפיים באוקראינית, רוסית, אנגלית ועברית, זמינים במדור "קריאה".<br
+      />
+      • <a href="/exhibition">תערוכת תלת מימד</a> מקוונת של אמנים אוקראינים על עיר
+      הולדתם ובית<br />
+      • תערוכה בערי ישראל:<br /><br />
+      יפו | 11 – 14/09 | <a href="https://www.instagram.com/nothin9000000"
+        >חלל אמנות nothing</a
+      > (הצורפים 29)<br />
+      <br />
+      חיפה | <a href="https://www.instagram.com/tse_moe_misto"
+        >הישאר מעודכן לעדכונים</a
+      ><br />
+      <br />
+      ירושלים | 24 – 27/09 | <a href="https://www.instagram.com/koresh_gallery">
+        גלריה כורש 14</a
+      > (כורש 14)
+    </p>
+  </InfoBlock>
+  <CityList />
+  <InfoBlock title="לספר" id="tell">
+    <p>
+      אם נולדת באוקראינה ורוצה לחלוק זיכרונות מהעיר שלך כתוב אלינו ב <a
+        href="misto.spogadiv@gmail.com">misto.spogadiv@gmail.com</a
+      >
+    </p>
+    <p>
+      אנו נבחר זמן נוח עבורך,<br />
+      בואו נקרא זום<br />
+      או להיפגש לקפה
+    </p>
+  </InfoBlock>
+  <Parallax />
+  <InfoBlock title="לעזור" id="help">
+    <p>אנחנו רוצים שהפרויקט יתקיים בשפות שונות: באוקראינית, אנגלית ועברית</p>
+    <p>
+      אם אתה מוכן לתרגם את הראיון - כתוב ב <a href="misto.spogadiv@gmail.com"
+        >misto.spogadiv@gmail.com</a
+      > המסומן "תרגום"
+    </p>
+    <p>
+      אם אתה רוצה לעזור לנו לפגוש אנשים, איתם יהיה לנו טוב; עֶזרָה מבחינה
+      כלכלית; תפגשו אותנו לקפה - כתבו גם אתם!
+    </p>
+  </InfoBlock>
+</Main>

@@ -1,0 +1,60 @@
+---
+const { title, subtitle, id } = Astro.props;
+---
+
+<div class="info-block" id={id}>
+  <div class="container">
+    <h2>{title}</h2>
+    <h4>{subtitle}</h4>
+    <div class="info-block__text"><slot /></div>
+  </div>
+</div>
+<style>
+  .info-block {
+    background-color: #1d1d1d;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .info-block h2 {
+    color: #ffd700;
+    font-size: 144px;
+    line-height: 1;
+  }
+
+  .info-block h4 {
+    color: #ffffff;
+    font-size: 64px;
+    line-height: 1;
+    max-width: 540px;
+    margin: 0 auto;
+    margin-top: 60px;
+  }
+
+  .info-block__text {
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  .info-block__text :global(p),
+  .info-block__text :global(ul) {
+    color: #7f7e7e;
+    font-size: 18px;
+    margin: 40px 0;
+  }
+
+  .info-block__text :global(a) {
+    color: #ffd700;
+    text-decoration: none;
+  }
+
+  @media (max-width: 900px) {
+    .info-block h2 {
+      font-size: 72px;
+    }
+
+    .info-block h4 {
+      font-size: 40px;
+    }
+  }
+</style>

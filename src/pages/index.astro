@@ -2,19 +2,75 @@
 import Main from "../layouts/main.astro";
 
 import CityList from "../components/CityList.astro";
+import InfoBlock from "../components/InfoBlock.astro";
+import Parallax from "../components/Parallax.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <Main>
-      <CityList />
-    </Main>
-  </body>
-</html>
+<Main>
+  <InfoBlock title="about" subtitle="who will tell about the city?" id="about">
+    <p>
+      during the Shoah [Holocaust], most of the Jewish towns were wiped off the
+      face of the earth. people who survived the war could not return home, and
+      many had nowhere to return. sometimes memory is the only thing that can
+      speak; that is how izkor biher "books of memory", were established.
+    </p>
+    <p>
+      "misto" is a multimedia project based on interviews with Ukrainians who
+      left their homes due to the full-scale Russian invasion, and a series of
+      exhibitions about their hometown, home and perceptions of war.
+    </p>
+    <p>
+      the main method of the project is in-depth interviews in Ukrainian,
+      Russian, English and Hebrew: memories of the hometown, childhood, smells,
+      sounds. these are imaginary walks through native places and deep within
+      oneself.
+    </p>
+    <p>
+      the misto is:<br />
+      • autobiographical interviews in Ukrainian, Russian, English and Hebrew, available
+      in the "read" section<br />
+      • <a href="/exhibition">online 3D exhibition</a> of Ukrainian artists about
+      their hometown and home<br />
+      • exhibition in the cities of Israel:<br /><br />
+      Jaffa | 11 – 14/09 | <a href="https://www.instagram.com/nothin9000000"
+        >art space nothing</a
+      > (Ha-Tzorfim 29)<br />
+      <br />
+      Haifa | <a href="https://www.instagram.com/tse_moe_misto"
+        >stay tuned for updates</a
+      ><br />
+      <br />
+      Jerusalem | 24 – 27/09 | <a
+        href="https://www.instagram.com/koresh_gallery">gallery Koresh 14</a
+      > (Koresh 14)
+    </p>
+  </InfoBlock>
+  <CityList />
+  <InfoBlock title="tell your story" id="tell">
+    <p>
+      if you were born in Ukraine and want to share memories of your city write
+      to us at <a href="misto.spogadiv@gmail.com">misto.spogadiv@gmail.com</a>
+    </p>
+    <p>
+      we will choose a convenient time for you,<br />
+      let's call zoom<br />
+      or meet for coffee
+    </p>
+  </InfoBlock>
+  <Parallax />
+  <InfoBlock title="help" id="help">
+    <p>
+      we want the project to live in different languages: in Ukrainian, English
+      and Hebrew
+    </p>
+    <p>
+      if you are ready to translate the interview - write on <a
+        href="misto.spogadiv@gmail.com">misto.spogadiv@gmail.com</a
+      > marked "translation"
+    </p>
+    <p>
+      if you want to help us meet people, with whom we will be fine; help
+      financially; meet us for coffee - write as well!
+    </p>
+  </InfoBlock>
+</Main>
