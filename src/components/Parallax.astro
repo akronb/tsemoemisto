@@ -11,4 +11,10 @@
     background-position: center;
     background-attachment: fixed;
   }
+
+  @supports (-webkit-overflow-scrolling: touch) {
+    .parallax: {
+      background-attachment: scroll;
+    }
+  }
 </style>
