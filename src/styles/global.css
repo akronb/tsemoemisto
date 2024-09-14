@@ -9,6 +9,7 @@
   1. Use a more-intuitive box-sizing model.
 */
 *, *::before, *::after {
+  font-synthesis: none !important;
   box-sizing: border-box;
 }
 
