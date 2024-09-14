@@ -4,9 +4,9 @@ const { title, subtitle, id } = Astro.props;
 
 <div class="info-block" id={id}>
   <div class="container">
-    <h2>{title}</h2>
-    <h4>{subtitle}</h4>
-    <div class="info-block__text"><slot /></div>
+    <h2 class="slide-in">{title}</h2>
+    <h4 class="slide-in">{subtitle}</h4>
+    <div class="info-block__text slide-in"><slot /></div>
   </div>
 </div>
 <style>

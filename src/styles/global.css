@@ -73,3 +73,49 @@ p, h1, h2, h3, h4, h5, h6 {
     padding-inline-end: 16px;
   }
 }
+
+@keyframes fade-ltr {
+  0% {
+    opacity: 0;
+    transform: translateX(2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-rtl {
+  0% {
+    opacity: 0;
+    transform: translateX(-2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes stretch {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  html[dir="ltr"] .slide-in.in-view {
+    animation: fade-ltr 0.3s 0.2s both;
+  }  
+  
+  html[dir="rtl"] .slide-in.in-view {
+    animation: fade-rtl 0.3s 0.2s both;
+  }
+
+  .stretch.in-view {
+    animation: stretch 0.4s 0.2s both;
+  }
+}

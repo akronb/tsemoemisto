@@ -22,7 +22,7 @@ const lang = Astro.currentLocale;
     <div class="cities__bg-bottom"></div>
     {
       cities[lang].map((c, idx) => (
-        <div class="city">
+        <div class="city slide-in">
           <a href={getRelativeLocaleUrl(lang, links[idx])} class="read-link">
             {callNames[lang]}
           </a>

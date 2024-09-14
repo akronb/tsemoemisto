@@ -1,0 +1,49 @@
+---
+
+---
+
+<div class="intro">
+  <img src="/images/path-left.png" class="path-left" />
+  <img src="/images/logo-big.svg" class="logo-big" />
+  <img src="/images/path-right.png" class="path-right" />
+</div>
+<style>
+  .intro {
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    background-color: #1d1d1d;
+  }
+
+  .path-left {
+    width: 24%;
+    margin-top: 7%;
+    align-self: flex-start;
+  }
+
+  .logo-big {
+    width: 25%;
+  }
+
+  .path-right {
+    width: 24%;
+    margin-bottom: 7%;
+    align-self: flex-end;
+  }
+
+  @media (max-width: 900px) {
+    .path-left {
+      width: 30%;
+      margin-inline-end: -1%;
+    }
+
+    .logo-big {
+      width: 35%;
+    }
+
+    .path-right {
+      width: 30%;
+      margin-inline-start: -1%;
+    }
+  }
+</style>

@@ -1,0 +1,41 @@
+---
+import Main from "./main.astro";
+---
+
+<Main>
+  <slot />
+  <div class="container article-end">
+    <div class="article-bg-bot"></div>
+  </div>
+</Main>
+<style>
+  .article-end {
+    position: relative;
+    height: 140px;
+  }
+
+  .article-bg-bot {
+    position: absolute;
+    height: 320px;
+    width: 200px;
+    bottom: 0;
+    background-image: url(/images/article-bg-bottom.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  html[dir="ltr"] .article-bg-bot {
+    left: 0;
+  }
+
+  html[dir="rtl"] .article-bg-bot {
+    right: 0;
+    transform: rotateY(180deg);
+  }
+
+  @media (max-width: 900px) {
+    .article-bg-bot {
+      height: 140px;
+    }
+  }
+</style>

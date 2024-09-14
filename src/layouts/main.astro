@@ -24,6 +24,41 @@ const isRTL = lang === "he";
     </main>
     <Footer />
   </body>
+  <script>
+    const bserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+          }
+        });
+      },
+      {
+        rootMargin: "0px",
+        threshold: [0, 0.1, 1],
+      }
+    );
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+          }
+        });
+      },
+      {
+        rootMargin: "0px",
+        threshold: [0, 0.1, 1],
+      }
+    );
+
+    const tags = document.querySelectorAll(".slide-in, .stretch");
+
+    tags.forEach((tag) => {
+      observer.observe(tag);
+    });
+  </script>
 </html>
 <style>
   body {
